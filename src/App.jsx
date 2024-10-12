@@ -1,11 +1,42 @@
-import { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react';
+import './App.css';
+import axios from "axios";
 
-function App() {
+
+const apiUrl = "https://rickandmortyapi.com/api/character";
+
+function App() {  
+  const [charactersList, setCharactersList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const getCharacter = async () => {
+      try {
+        setIsLoading(true);
+        const response = await axios.get(apiUrl);
+        console.log(response.data);
+        setCharactersList(response.data.results);
+       } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getCharacter();
+  }, []);
+  
+  if (isLoading) {
+    return <h1>loading...</h1>
+  }
+  
+  if (error) {
+  return <h1>Ups, something went wrong...</h1>
+  }
  
   return (
     <>
-      <p> Cześć Bartosz!</p>
+      <div>{charactersList.map(character => <p key={character.id}>{character.name}</p>) }</div>
     </>
   )
 }
