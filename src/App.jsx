@@ -5,7 +5,7 @@ import axios from "axios";
 
 const apiUrl = "https://rickandmortyapi.com/api/character";
 
-function App() {  
+const useGetCharacters = () => {
   const [charactersList, setCharactersList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -25,7 +25,17 @@ function App() {
     };
     getCharacter();
   }, []);
-  
+
+  return {
+    isLoading,
+    error,
+    charactersList
+  }
+ }
+
+function App() {
+  const { isLoading, error, charactersList } = useGetCharacters();
+
   if (isLoading) {
     return <h1>loading...</h1>
   }
