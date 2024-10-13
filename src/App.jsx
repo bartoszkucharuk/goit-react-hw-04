@@ -1,20 +1,25 @@
 import './App.css';
 import { useGetCharacters } from './hooks/useGetCharacters';
+import Loader from "./components/Loader"
+import Error from "./components/Error"
+import CharactersList from "./components/CharactersList"
 
 function App() {
   const { isLoading, error, charactersList } = useGetCharacters();
 
   if (isLoading) {
-    return <h1>Please wait, loading...</h1>
+    return <Loader />
   }
   
   if (error) {
-  return <h1>Ups, something went wrong...</h1>
+  return <Error />
   }
  
   return (
     <>
-      <div>{charactersList.map(character => <p key={character.id}>{character.name}</p>) }</div>
+      <div>
+        <CharactersList characters={charactersList} />
+      </div>
     </>
   )
 }
