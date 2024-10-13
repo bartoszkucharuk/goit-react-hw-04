@@ -1,39 +1,11 @@
-import { useEffect, useState } from 'react';
 import './App.css';
-import { fetchCharacters } from './API/api';
-
-const useGetCharacters = () => {
-  const [charactersList, setCharactersList] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    const getCharacter = async () => {
-      try {
-        setIsLoading(true);
-        const characters = await fetchCharacters();
-        setCharactersList(characters);
-       } catch (error) {
-        setError(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    getCharacter();
-  }, []);
-
-  return {
-    isLoading,
-    error,
-    charactersList
-  }
- }
+import { useGetCharacters } from './hooks/useGetCharacters';
 
 function App() {
   const { isLoading, error, charactersList } = useGetCharacters();
 
   if (isLoading) {
-    return <h1>loading...</h1>
+    return <h1>Please wait, loading...</h1>
   }
   
   if (error) {
