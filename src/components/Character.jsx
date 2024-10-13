@@ -1,9 +1,7 @@
 import React from 'react'
 
-export default function Character() {
+export default function Character({ name }) {
     return (
-        <div>
-      
-        </div>
+        <div>{name}</div>
     );
 }
