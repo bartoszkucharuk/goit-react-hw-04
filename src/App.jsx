@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import axios from "axios";
-
-
-const apiUrl = "https://rickandmortyapi.com/api/character";
+import { fetchCharacters } from './API/api';
 
 const useGetCharacters = () => {
   const [charactersList, setCharactersList] = useState([]);
@@ -14,9 +11,8 @@ const useGetCharacters = () => {
     const getCharacter = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(apiUrl);
-        console.log(response.data);
-        setCharactersList(response.data.results);
+        const characters = await fetchCharacters();
+        setCharactersList(characters);
        } catch (error) {
         setError(error);
       } finally {
