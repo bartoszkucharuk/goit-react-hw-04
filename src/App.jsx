@@ -6,7 +6,7 @@ import CharactersList from "./components/CharactersList"
 import SearchForm from "./components/SearchForm"
 
 function App() {
-  const { isLoading, error, charactersList } = useGetCharacters();
+  const { isLoading, error, charactersList, getCharacter } = useGetCharacters();
 
   if (isLoading) {
     return <Loader />
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <div>
-        <SearchForm />
+        <SearchForm getCharacter={getCharacter} />
         <CharactersList characters={charactersList} />
       </div>
     </>

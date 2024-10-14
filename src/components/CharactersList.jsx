@@ -10,4 +10,4 @@ export default function CharactersList({ characters }) {
             ))}
         </div>
     );
-}
+} 
