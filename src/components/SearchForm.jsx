@@ -8,6 +8,7 @@ export default function SearchForm() {
         console.log(name.value);
         form.reset();
     };
+    
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" name="name"></input>
