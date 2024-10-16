@@ -1,6 +1,9 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://rickandmortyapi.com/api";
+axios.defaults.baseURL = "https://api.unsplash.com";
+
+const API_KEY = "hubg1xoHbzezxdG_gVE1Sblwl21-_AMO0bExrhRibGw";
+const image_per_page = 20;
 
 export const fetchCharacters = async (name) => {
     const response = await axios.get(`/character?name=${name}`);
