@@ -6,6 +6,8 @@ export const useGetCharacters = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
+
+  //const getCharacter is a call to API site
   const getCharacter = async (name) => {
     try {
       setIsLoading(true);
