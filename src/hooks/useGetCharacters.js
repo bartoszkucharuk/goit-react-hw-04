@@ -15,6 +15,7 @@ export const useGetCharacters = () => {
       setCharactersList(characters);
     } catch (error) {
       setError(error);
+      console.log(error);
     } finally {
       setIsLoading(false);
     }

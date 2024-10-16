@@ -4,10 +4,12 @@ import Character from "./Character";
 
 export default function CharactersList({ characters }) {
     return (
-        <div>
+        <ul>
             {characters.map((char) => (
-                <Character key={char.id} name={char.name} />
+                <li key={char.id}>
+                    <Character data={char} />
+                </li>
             ))}
-        </div>
+        </ul>
     );
 } 
