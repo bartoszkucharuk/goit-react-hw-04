@@ -2,12 +2,12 @@ import React from 'react'
 import ImageCard from "./ImageCard";
 
 
-export default function ImageList({ characters }) {
+export default function ImageList({ frames }) {
     return (
         <ul>
-            {characters.map((char) => (
-                <li key={char.id}>
-                    <ImageCard data={char} />
+            {frames.map((img) => (
+                <li key={img.id}>
+                    <ImageCard data={img} />
                 </li>
             ))}
         </ul>

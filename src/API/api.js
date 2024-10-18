@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://api.unsplash.com";
 
-export const fetchCharacters = async (name) => {
+export const fetchImages = async (name) => {
     const response = await axios.get(`/search/photos`, {
         params:
         {

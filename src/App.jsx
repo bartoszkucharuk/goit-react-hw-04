@@ -1,12 +1,12 @@
 import './App.css';
-import { useGetCharacters } from './hooks/useGetCharacters';
+import { useGetImages } from './hooks/useGetImages';
 import Loader from "./components/Loader"
 import ErrorMessage from "./components/ErrorMessage"
 import ImageGallery from "./components/ImageGallery"
 import SearchBar from "./components/SearchBar"
 
 function App() {
-  const { isLoading, error, charactersList, getCharacter } = useGetCharacters();
+  const { isLoading, error, imagesList, getImage } = useGetImages();
 
   if (isLoading) {
     return <Loader />
@@ -19,8 +19,8 @@ function App() {
   return (
     <>
       <div>
-        <SearchBar getCharacter={getCharacter} />
-        <ImageGallery characters={charactersList} />
+        <SearchBar getImage={getImage} />
+        <ImageGallery frames={imagesList} />
       </div>
     </>
   )

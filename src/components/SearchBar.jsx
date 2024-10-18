@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function SearchBar({getCharacter}) {
+export default function SearchBar({getImage}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const { name } = form.elements;
         console.log(name.value); // tu powinien znajdować sie call do API
-        getCharacter(name.value);
+        getImage(name.value);
         form.reset();
     };
 
