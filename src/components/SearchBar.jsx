@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SearchForm({getCharacter}) {
+export default function SearchBar({getCharacter}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;

@@ -1,13 +1,13 @@
 import React from 'react'
-import Character from "./Character";
+import ImageCard from "./ImageCard";
 
 
-export default function CharactersList({ characters }) {
+export default function ImageList({ characters }) {
     return (
         <ul>
             {characters.map((char) => (
                 <li key={char.id}>
-                    <Character data={char} />
+                    <ImageCard data={char} />
                 </li>
             ))}
         </ul>
