@@ -8,10 +8,10 @@ export const useGetImages = () => {
 
 
   //const getImage is a call to API site
-  const getImage = async (name) => {
+  const getImage = async (inputValue) => {
     try {
       setIsLoading(true);
-      const images = await fetchImages(name);
+      const images = await fetchImages(inputValue);
       setImagesList(images);
     } catch (error) {
       setError(error);
