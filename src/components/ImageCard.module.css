@@ -1,0 +1,9 @@
+.card {
+cursor: pointer;
+}
+
+.frame {
+    height: 240px;
+    width: 360px;
+    object-fit: cover;
+}
