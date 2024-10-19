@@ -18,10 +18,8 @@ function App() {
  
   return (
     <>
-      <div>
-        <SearchBar getImage={getImage} />
-        <ImageGallery frames={imagesList} />
-      </div>
+      <SearchBar getImage={getImage} />
+      <ImageGallery frames={imagesList} />
     </>
   )
 }
