@@ -7,12 +7,12 @@ export default function SearchBar({getImage}) {
         const form = event.target;
         const { inputValue } = form.elements;
         console.log(inputValue.value); // tu powinien znajdować sie call do API
-// INSERT ERROR MESSAGE BELOW
+// TOASTER ERROR MESSAGE BELOW
         if (inputValue.value.trim() === "") {
             toast.error("Please enter text to search image!");
             return;
         };
-// END OF ERROR MESSAGE UNDER
+// END OF TOAST ERROR MESSAGE UNDER
         
         getImage(inputValue.value);
         form.reset();
