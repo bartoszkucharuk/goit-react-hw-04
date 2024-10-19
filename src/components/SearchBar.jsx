@@ -1,4 +1,5 @@
 import React from 'react';
+import toast, { Toaster } from "react-hot-toast";
 
 export default function SearchBar({getImage}) {
     const handleSubmit = (event) => {
@@ -6,12 +7,13 @@ export default function SearchBar({getImage}) {
         const form = event.target;
         const { inputValue } = form.elements;
         console.log(inputValue.value); // tu powinien znajdować sie call do API
-
+// INSERT ERROR MESSAGE BELOW
         if (inputValue.value.trim() === "") {
-            console.log("Please enter text to search image!");
+            toast.error("Please enter text to search image!");
             return;
         };
-
+// END OF ERROR MESSAGE UNDER
+        
         getImage(inputValue.value);
         form.reset();
     };
@@ -27,6 +29,7 @@ export default function SearchBar({getImage}) {
                 />
                 <button type ="submit">Search</button>
             </form>
+            <Toaster position="top-right" />
         </header>
     );
 }
