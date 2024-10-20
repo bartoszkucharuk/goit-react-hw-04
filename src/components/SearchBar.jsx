@@ -1,6 +1,8 @@
 import React from 'react';
 import toast, { Toaster } from "react-hot-toast";
 import styles from "./SearchBar.module.css";
+import { FiSearch } from "react-icons/fi";
+
 
 
 
@@ -24,13 +26,17 @@ export default function SearchBar({getImage}) {
     return (
         <header className={styles.header}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <button className={styles.button}type ="submit">Search</button>
+                <button className={styles.button} type="submit">
+                    <FiSearch className={styles.FiSearch} size={24} />
+                </button>
+         
                 <input
                     className={styles.input}
                     type="text"
                     name="inputValue"
                     autocomplete="off"
-                    autoFocusplaceholder="Searchimages and photos"                    
+                    autoFocusplaceholder="Searchimages and photos"  
+                                      
                 />
             </form>
             <Toaster position="top-right" />

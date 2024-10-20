@@ -1,36 +1,57 @@
 header {
+    display: flex;
+    flex-wrap:nowrap;
+    align-content: center;
+    justify-content: center;
     background-color: #252d91;
+    max-width: 100%;
     padding: 10px;
-    /* margin-top: 0px; */
-    width: 100vh;
+    margin-top: 0px;
     top: 0;
+    position: sticky;
 }
 
 .form {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 500px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    background-color: white;
+    overflow: hidden;
 }
 
 .button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #252d91;
+    background-color: white;
     border: none;
+    border-radius: 0px;
     padding: 10px;
-    margin-right: 10px;
-
 }
 
 .button:focus {
     outline: none;
 }
 
+.FiSearch {
+    color: rgb(100, 100, 100);
+}
+
+.FiSearch:hover, 
+.FiSearch:focus {
+    color: black;
+}
+
+
 .input {
-    width: 500px;
-    padding: 10px;
+    width: 465px;
     outline: none;
-    border-radius: 5px;
+    border: none;
     background-color: white;
+    color: black;
+    font-size: 20px;
 }
 
