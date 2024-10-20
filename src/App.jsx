@@ -4,15 +4,13 @@ import Loader from "./components/Loader"
 import ErrorMessage from "./components/ErrorMessage"
 import ImageGallery from "./components/ImageGallery"
 import SearchBar from "./components/SearchBar"
-import Modal from 'react-modal'
-import { useState } from 'react';
+import ImageModal from './components/ImageModal';
+import { useState } from 'react'
 
 function App() {
   const { isLoading, error, imagesList, getImage } = useGetImages();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  
-  Modal.setAppElement('#root');
-
+  const [currentImage, setCurrentImage] = useState(null);
 
   if (isLoading) {
     return <Loader />
@@ -21,19 +19,24 @@ function App() {
   if (error) {
   return <ErrorMessage />
   }
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setCurrentImage(null);
+  };
+
+  const openModal = (currentImageInfos) => {
+    setCurrentImage(currentImageInfos);
+    setModalIsOpen(true);
+  };
  
   return (
     <>
       <SearchBar getImage={getImage} />
-      <ImageGallery frames={imagesList} />
+      <ImageGallery frames={imagesList} openModal={openModal} />
 
-      <button onClick={() => setModalIsOpen(true)}>Open modal</button>
-      <Modal
-        isOpen={modalIsOpen}
-        shouldCloseOnOverlayClick={true}
-        onRequestClose={() => setModalIsOpen(false)}
-       />
-        {/* <h1>duży obraz tutaj + stylizacja</h1> */}
+      <button onClick={openModal}>Open modal</button>
+      <ImageModal modalWindowIsOpen={modalIsOpen} onRequestClose={closeModal} currentImage={currentImage} />
 
     </>
   )

@@ -16,6 +16,5 @@ export const fetchImages = async (inputValue) => {
 
     });
 
-    console.log(response.data); // czytanie wyników z API
     return response.data.results;
 };

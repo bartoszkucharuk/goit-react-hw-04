@@ -34,7 +34,7 @@ export default function SearchBar({getImage}) {
                     className={styles.input}
                     type="text"
                     name="inputValue"
-                    autocomplete="off"
+                    autoComplete="off"
                     autoFocus
                     placeholder="Search images and photos"
                 />
