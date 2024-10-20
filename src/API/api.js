@@ -19,13 +19,3 @@ export const fetchImages = async (inputValue) => {
     console.log(response.data); // czytanie wyników z API
     return response.data.results;
 };
-
-// export const fetchEpisodes = async () => {
-//     const response = await axios.get("/episode");
-//     return response.data.results;
-// };
-
-// export const fetchLocations = async () => {
-//     const response = await axios.get("/location");
-//     return response.data.results;
-// };

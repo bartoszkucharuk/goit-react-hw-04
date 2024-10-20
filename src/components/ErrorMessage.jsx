@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function ErrorMessage() {
     return (
-        <p>Ups, something went wrong :/</p>
+        <h1>Ups, something went wrong :(</h1>
     );
 }

@@ -27,7 +27,7 @@ export default function SearchBar({getImage}) {
         <header className={styles.header}>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <button className={styles.button} type="submit">
-                    <FiSearch className={styles.FiSearch} size={24} />
+                    <FiSearch className={styles.FiSearch} size={18} />
                 </button>
          
                 <input
@@ -35,8 +35,8 @@ export default function SearchBar({getImage}) {
                     type="text"
                     name="inputValue"
                     autocomplete="off"
-                    autoFocusplaceholder="Searchimages and photos"  
-                                      
+                    autoFocus
+                    placeholder="Search images and photos"
                 />
             </form>
             <Toaster position="top-right" />
