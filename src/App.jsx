@@ -5,6 +5,7 @@ import ErrorMessage from "./components/ErrorMessage"
 import ImageGallery from "./components/ImageGallery"
 import SearchBar from "./components/SearchBar"
 import ImageModal from './components/ImageModal';
+import LoadMoreBtn from './components/LoadMoreBtn';
 import { useState } from 'react'
 
 function App() {
@@ -29,13 +30,26 @@ function App() {
     setCurrentImage(currentImageInfos);
     setModalIsOpen(true);
   };
+
+
+
+
+
  
   return (
     <>
       <SearchBar getImage={getImage} />
       <ImageGallery frames={imagesList} openModal={openModal} />
 
-      <button onClick={openModal}>Open modal</button>
+      {/* {imagesList.length > 0 && !isLoading && (
+        <LoadMoreBtn onClick={onClickLoad} />
+      )} */}
+
+        <LoadMoreBtn />
+
+      
+
+      
       <ImageModal modalWindowIsOpen={modalIsOpen} onRequestClose={closeModal} currentImage={currentImage} />
 
     </>

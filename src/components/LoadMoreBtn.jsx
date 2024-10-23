@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function LoadMoreBtn() {
+export default function LoadMoreBtn({onClickLoad}) {
   return (
     <div>
-      <button type="submit">Load More Button here</button>
+      <button onClick={onClickLoad}>Load More</button>
     </div>
   )
 }
