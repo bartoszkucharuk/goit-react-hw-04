@@ -1,17 +1,19 @@
 import './App.css';
+import { useState } from 'react'
 import { useGetImages } from './hooks/useGetImages';
 import Loader from "./components/Loader"
 import ErrorMessage from "./components/ErrorMessage"
 import ImageGallery from "./components/ImageGallery"
 import SearchBar from "./components/SearchBar"
 import ImageModal from './components/ImageModal';
-import LoadMoreBtn from './components/LoadMoreBtn';
-import { useState } from 'react'
+// import LoadMoreBtn from './components/LoadMoreBtn';
+// import { fetchImages } from './API/api';
 
 function App() {
   const { isLoading, error, imagesList, getImage } = useGetImages();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
+  // const [page, setPage] = useState(1);
 
   if (isLoading) {
     return <Loader />
@@ -20,6 +22,12 @@ function App() {
   if (error) {
   return <ErrorMessage />
   }
+
+
+  // const onClickLoad = () => { }
+  // fetchImages(inputValue, page + 1);
+  // setPage((prevPage) => prevPage + 1);
+
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -30,11 +38,7 @@ function App() {
     setCurrentImage(currentImageInfos);
     setModalIsOpen(true);
   };
-
-
-
-
-
+  
  
   return (
     <>
@@ -45,13 +49,8 @@ function App() {
         <LoadMoreBtn onClick={onClickLoad} />
       )} */}
 
-        <LoadMoreBtn />
-
-      
-
-      
+      {/* <LoadMoreBtn onClick={onClickLoad}/> */}
       <ImageModal modalWindowIsOpen={modalIsOpen} onRequestClose={closeModal} currentImage={currentImage} />
-
     </>
   )
 }
