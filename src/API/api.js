@@ -7,7 +7,7 @@ export const fetchImages = async (inputValue, page=1) => {
         params:
         {
             query: inputValue,
-            per_page: 16,
+            per_page: 20,
             page: page,
         },
         headers: {
@@ -18,3 +18,4 @@ export const fetchImages = async (inputValue, page=1) => {
 
     return response.data.results;
 };
+

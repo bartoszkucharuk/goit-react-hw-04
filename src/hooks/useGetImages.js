@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { fetchImages } from "../API/api";
-import { RiScrollToBottomFill } from "react-icons/ri";
 
 export const useGetImages = () => {
   const [imagesList, setImagesList] = useState([]);

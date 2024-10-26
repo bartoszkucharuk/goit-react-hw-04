@@ -23,17 +23,17 @@ function App() {
     setCurrentImage(currentImageInfos);
     setModalIsOpen(true);
   };
-  
- 
+
   return (
     <>
       <SearchBar getImage={getImage} />
+      {error && <ErrorMessage />}
       <ImageGallery frames={imagesList} openModal={openModal} />
       {isLoading && <Loader />}
       {imagesList.length > 0 && !isLoading && (
         <LoadMoreBtn onClickLoad={loadMoreImages} />
       )}
-      {error && <ErrorMessage />}
+
       <ImageModal modalWindowIsOpen={modalIsOpen} onRequestClose={closeModal} currentImage={currentImage} />
     </>
   )
