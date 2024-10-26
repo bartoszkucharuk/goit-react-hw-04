@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { fetchImages } from "../API/api";
+import { RiScrollToBottomFill } from "react-icons/ri";
 
 export const useGetImages = () => {
   const [imagesList, setImagesList] = useState([]);
@@ -39,8 +40,18 @@ export const useGetImages = () => {
       console.log(error);
     } finally {
       setIsLoading(false);
+      scrollDownToButton();
     }
   };
+
+ const scrollDownToButton = () => {
+      setTimeout(() => {
+        window.scrollBy({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }, 100);
+    };
 
   return {
     isLoading,
@@ -48,5 +59,5 @@ export const useGetImages = () => {
     imagesList,
     getImage,
     loadMoreImages,
-  }
+  };
  }

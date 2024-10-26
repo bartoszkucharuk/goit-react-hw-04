@@ -7,7 +7,7 @@ export const fetchImages = async (inputValue, page=1) => {
         params:
         {
             query: inputValue,
-            per_page: 5,
+            per_page: 16,
             page: page,
         },
         headers: {
