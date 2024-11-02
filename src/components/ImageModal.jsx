@@ -13,7 +13,7 @@ export default function ImageModal({ modalWindowIsOpen, onRequestClose, currentI
       overlayClassName={styles.overlay}
     >
       {currentImage && <img className={styles.modalImage} src={currentImage.urls.regular} alt={currentImage.alt_description} />}
-        
+            console.log(data.total_pages);
       </Modal>
   )
 };
